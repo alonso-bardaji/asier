@@ -1693,7 +1693,8 @@ input, select, textarea {
 .summary-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline; /* Align items on the same baseline */
+  width: 100%; /* Ensure the container takes up the full width */
 }
 
 h3 {
@@ -1702,8 +1703,10 @@ h3 {
 
 .last-update {
   font-size: 0.85em; /* Smaller font size for the last update */
+  margin: 0; /* Remove any margin to avoid unwanted spacing */
   text-align: right;
 }
+
 
 
 		
