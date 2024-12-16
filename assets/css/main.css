@@ -1690,5 +1690,20 @@ input, select, textarea {
     margin-bottom: 0.5rem; /* Adds extra space below the first paragraph */
 }
 
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  margin: 0;
+}
+
+.last-update {
+  font-size: 0.85em; /* Smaller font size for the last update */
+  text-align: right;
+}
+
 
 		
