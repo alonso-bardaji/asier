@@ -1303,8 +1303,8 @@ input, select, textarea {
 			}
 			
 			#header .logo img {
-				width: 150%; /* Fill the circular container */
-				height: 150%;
+				width: 133%; /* Fill the circular container */
+				height: 133%;
 				object-fit: cover; /* Ensures proper scaling and cropping */
 				border-radius: 100%; /* Ensures the image itself is circular */
 			}		
