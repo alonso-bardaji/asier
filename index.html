@@ -80,7 +80,7 @@
 								<section>
   									<div class="summary-header">
     										<h3>Summary</h3>
-<p class="last-update">Last update: 16/12/2024</p>
+<p class="last-update" id="lastUpdate">Last update: </p>
   									</div>
   									<ul>
     										<li>7 publications in Q1 peer-reviewed journals</li>
@@ -442,6 +442,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			    const lastModified = new Date(document.lastModified);
+			    const day = String(lastModified.getDate()).padStart(2, '0');  // Pad single digit day with a leading 0
+    			    const month = String(lastModified.getMonth() + 1).padStart(2, '0'); // Month is 0-based, so add 1 and pad if needed
+    			    const year = lastModified.getFullYear();
+			    const formattedDate = `${day}/${month}/${year}`;
+			    document.getElementById('lastUpdate').textContent = 'Last update: ' + formattedDate;
+  			</script>
 
 	</body>
 </html>
