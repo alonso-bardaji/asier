@@ -160,6 +160,7 @@ input, select, textarea {
 		a:hover {
 			border-bottom-color: transparent;
 		}
+		
 
 	strong, b {
 		color: #ffffff;
@@ -173,6 +174,9 @@ input, select, textarea {
 	p {
 		margin: 0 0 2rem 0;
 	}
+
+	
+
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #ffffff;
@@ -253,10 +257,11 @@ input, select, textarea {
 	}
 
 	blockquote {
-		border-left: solid 4px #ffffff;
+		border-right: solid 4px #ffffff;
 		font-style: italic;
+		text-align: right;
 		margin: 0 0 2rem 0;
-		padding: 0.5rem 0 0.5rem 2rem;
+		padding: 0.5rem 2rem 0.5rem 2rem;
 	}
 
 	code {
@@ -644,20 +649,20 @@ input, select, textarea {
 		position: relative;
 	}
 
-		.image:before {
-			pointer-events: none;
-			background-image: url("../../images/overlay.png");
-			background-color: rgba(19, 21, 25, 0.5);
-			border-radius: 4px;
-			content: '';
-			display: block;
-			height: 100%;
-			left: 0;
-			opacity: 0.5;
-			position: absolute;
-			top: 0;
-			width: 100%;
-		}
+	.image:before {
+		pointer-events: none;
+		background-image: url("../../images/overlay.png");
+		background-color: rgba(19, 21, 25, 0.5);
+		border-radius: 4px;
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0.5;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
 
 		.image img {
 			border-radius: 4px;
@@ -1303,8 +1308,8 @@ input, select, textarea {
 			}
 			
 			#header .logo img {
-				width: 133%; /* Fill the circular container */
-				height: 133%;
+				width: 100%; /* Fill the circular container */
+				height: 100%;
 				object-fit: cover; /* Ensures proper scaling and cropping */
 				border-radius: 100%; /* Ensures the image itself is circular */
 			}		
@@ -1706,6 +1711,31 @@ h3 {
   margin: 0; /* Remove any margin to avoid unwanted spacing */
   text-align: right;
 }
+
+
+    /* Remove bullet points and apply inline style only for the #stats list */
+    #stats {
+        list-style-type: none;  /* Remove bullet points */
+        padding: 0;             /* Remove default padding */
+        margin: 0;              /* Remove default margin */
+    }
+
+    /* Style for the <li> elements */
+    #stats li {
+        display: inline;        /* Make the list items inline */
+        margin-right: 5px;      /* Add space between items */
+    }
+
+    /* Add the " || " separator after each list item except the last */
+    #stats li:not(:last-child)::after {
+        content: ' ||';
+        margin-left: 5px;       /* Space before separator */
+    }
+
+
+
+
+
 
 
 
