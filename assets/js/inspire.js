@@ -92,3 +92,5 @@ const day = String(lastModified.getDate()).padStart(2, '0');  // Pad single digi
 	const year = lastModified.getFullYear();
 const formattedDate = `${day}/${month}/${year}`;
 document.getElementById('lastUpdate').textContent = 'Updated on ' + formattedDate;
+
+
