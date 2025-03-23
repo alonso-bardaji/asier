@@ -175,7 +175,16 @@ input, select, textarea {
 		margin: 0 0 2rem 0;
 	}
 
-	
+	p {
+		text-align: justify;
+		hyphens: auto;
+	  }
+
+	p {
+		word-break: break-word;
+		overflow-wrap: break-word;
+	  }
+	  
 
 
 	h1, h2, h3, h4, h5, h6 {
@@ -1733,6 +1742,47 @@ h3 {
     }
 
 
+	.icon-wrapper {
+		display: flex;
+		justify-content: space-around; /* Evenly distribute icons */
+		align-items: center;
+		margin-top: 1em; /* Adds spacing above the icons */
+	}
+
+	/* Icon styling */
+	.icon-container {
+		text-align: center;
+		cursor: pointer;
+		position: relative;
+		display: block;
+	}
+
+	/* Hidden text styling */
+	.hidden-text {
+		display: none;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: white;
+		padding: 5px 10px;
+		border-radius: 5px;
+		white-space: nowrap;
+		font-size: 14px;
+		z-index: 10;
+	}
+
+	/* Icon size & color */
+	.icon-container i {
+		font-size: 1.5rem; /* Adjust icon size */
+		color: #ffffff; /* Icon color */
+	}
+
+	/* Show hidden text when hovering over the icon */
+	.icon-container:hover .hidden-text {
+		display: block; /* Makes the text visible on hover */
+	}
 
 
 
