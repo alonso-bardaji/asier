@@ -1659,11 +1659,11 @@ input, select, textarea {
 	}
 
 		#footer .copyright {
-			letter-spacing: 0.2rem;
-			font-size: 0.6rem;
+			letter-spacing: 0rem;
+			font-size: .75rem;
 			opacity: 0.75;
 			margin-bottom: 0;
-			text-transform: uppercase;
+			text-transform: none;
 		}
 
 		body.is-article-visible #footer {
@@ -1746,7 +1746,7 @@ h3 {
 		display: flex;
 		justify-content: space-evenly; /* Evenly distribute icons */
 		align-items: center;
-		margin-top: 1em; /* Adds spacing above the icons */
+		margin-top: 0rem; /* Adds spacing above the icons */
 	}
 
 	/* Icon styling */
@@ -1758,35 +1758,73 @@ h3 {
 	}
 
 	/* Hidden text styling */
-	.hidden-text {
-		display: none;
-		position: absolute;
-		left: 50%;
-		transform: translateX(-50%);
-		top: 100%;
-		background-color: rgba(0, 0, 0, 0.5);
-		color: white;
-		padding: 5px 10px;
-		border-radius: 5px;
-		white-space: nowrap;
-		font-size: 16px;
-		z-index: 10;
-	}
+/* Update the .hidden-text styles */
+.hidden-text {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -150%;
+    background-color: rgba(27, 31, 34, 0.95); /* More opaque */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    z-index: 100; /* Higher z-index */
+    pointer-events: auto; /* Allow clicks on the text */
+}
 
-	/* Icon size & color */
-	.icon-container i {
-		font-size: 1rem; /* Adjust icon size */
-		color: rgba(255, 255, 255, 0.75); /* Icon color */
-	}
+/* Visible state */
+.hidden-text.visible {
+    display: block;
+    animation: none; /* Remove any fading animations */
+}
 
-	/* Show hidden text when hovering over the icon */
-	.icon-container:hover .hidden-text {
-		display: block; /* Makes the text visible on hover */
-	}
+/* Update icon container */
+.icon-container {
+    position: relative;
+    cursor: pointer;
+}
 
+/* Prevent hiding when clicking on the text */
+.hidden-text {
+    pointer-events: auto;
+}
 
+/* Footer icon hover behavior */
+.icon-container {
+    position: relative;
+    cursor: pointer;
+}
 
+.hidden-text {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -125%;
+    background-color: rgba(27, 31, 34, 0.95);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    z-index: 100;
+    pointer-events: none; /* Allow clicks to pass through */
+}
 
+/* Show on hover */
+.icon-container:hover .hidden-text {
+    display:block;
+}
 
+/* Keep visible when clicked (active state) */
+.icon-container.active .hidden-text {
+    display: block;
+}
 
-		
+/* Make links in text clickable */
+.hidden-text a {
+    pointer-events: auto;
+}
