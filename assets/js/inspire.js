@@ -94,39 +94,3 @@ const formattedDate = `${day}/${month}/${year}`;
 document.getElementById('lastUpdate').textContent = 'Updated on ' + formattedDate;
 
 
-// Footer icon functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const iconContainers = document.querySelectorAll('.icon-container');
-    let activeIcon = null;
-
-    // Handle icon clicks
-    iconContainers.forEach(container => {
-        container.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            // Remove active class from all icons
-            iconContainers.forEach(icon => {
-                icon.classList.remove('active');
-            });
-            
-            // Set clicked icon as active
-            this.classList.add('active');
-            activeIcon = this;
-        });
-    });
-
-    // Hide all when clicking anywhere else
-    document.addEventListener('click', function() {
-        if (activeIcon) {
-            activeIcon.classList.remove('active');
-            activeIcon = null;
-        }
-    });
-
-    // Prevent hiding when clicking on the text itself
-    document.querySelectorAll('.hidden-text').forEach(text => {
-        text.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    });
-});
