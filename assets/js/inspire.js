@@ -72,10 +72,12 @@ async function fetchInspireHEP() {
 //		document.getElementById('publications').innerHTML = `<span style="font-weight: bold">${publications}</span> relevant publications in Q1 peer-reviewed journals`;
 //		document.getElementById('h-index').innerHTML = `Sustained academic impact, with an h-index of <span style="font-weight: bold">${hIndex}</span>`;
 //		document.getElementById('citations').innerHTML = `Extensively recognized and referenced: <span style="font-weight: bold">${citations}</span> total citations`;
-		document.getElementById('laburpena').innerHTML = `<span style="font-weight: bold; font-size: 1.1rem">${publications}</span> relevant <b>publications</b> in Q1 peer-reviewed journals 
-		demonstrate sustained academic impact, with an <b>h-index</b> of <span style="font-weight: bold; font-size: 1.1rem">${hIndex}</span> 
-		and <span style="font-weight: bold; font-size: 1.1rem">${citations}</span> <b>citations</b>. 
-		`;
+		document.getElementById('laburpena').innerHTML = `
+  			A total of <span style="font-weight: bold; font-size: 1.1rem">${publications}</span> relevant <b>publications</b> in Q1 peer-reviewed journals, 
+			an <b>h-index</b> of <span style="font-weight: bold; font-size: 1.1rem">${hIndex}</span>, 
+			and <span style="font-weight: bold; font-size: 1.1rem">${citations}</span> <b>citations</b> 
+			collectively demonstrate a sustained academic impact.
+			`;
 		//<span style="font-size: .8rem;font-style: normal; display: inline-block; position: relative; top: 1rem; float: right;">Source: <a href="https://inspirehep.net/authors/1828431?ui-citation-summary=true" target="_blank">INSPIRE-HEP</a>.</span>`;
 		
 	} catch (error) {
