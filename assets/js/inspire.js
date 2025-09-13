@@ -79,7 +79,7 @@ async function fetchInspireHEP() {
      			in <span style="white-space: nowrap;">high-impact</span> <span style="white-space: nowrap;">peer-reviewed</span> journals, 
 			an <span style="white-space: nowrap;"><b>h-index</b>&nbsp;of&nbsp;<span style="font-weight: bold; font-size: 1.1rem">${hIndex}</span></span>, 
 			and <span style="white-space: nowrap;"><span style="font-weight: bold; font-size: 1.1rem">${citations}</span>&nbsp;<b>citations</b></span> 
-			collectively demonstrate a sustained academic impact.
+			demonstrate sustained academic impact.
 		`;
 
 	} catch (error) {
@@ -97,6 +97,7 @@ const day = String(lastModified.getDate()).padStart(2, '0');  // Pad single digi
 	const year = lastModified.getFullYear();
 const formattedDate = `${day}/${month}/${year}`;
 document.getElementById('lastUpdate').textContent = 'Updated on ' + formattedDate;
+
 
 
 
