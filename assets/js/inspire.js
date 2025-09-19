@@ -90,6 +90,9 @@ async function fetchInspireHEP() {
 
 fetchInspireHEP();
 
+const now = new Date();
+document.getElementById("date").textContent = "Updated on " + now.toLocaleDateString();
+
 
 const lastModified = new Date(document.lastModified);
 const day = String(lastModified.getDate()).padStart(2, '0');  // Pad single digit day with a leading 0
@@ -97,6 +100,7 @@ const day = String(lastModified.getDate()).padStart(2, '0');  // Pad single digi
 	const year = lastModified.getFullYear();
 const formattedDate = `${day}/${month}/${year}`;
 document.getElementById('lastUpdate').textContent = 'Updated on ' + formattedDate;
+
 
 
 
