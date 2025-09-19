@@ -77,7 +77,7 @@ async function fetchInspireHEP() {
 		document.getElementById('laburpena').innerHTML = `
 		A total <span style="white-space: nowrap;">of&nbsp;<span style="font-weight: bold; font-size: 1.1rem">${publications}</span>&nbsp;<b>publications</b></span> 
      			in <span style="white-space: nowrap;">high-impact</span> <span style="white-space: nowrap;">peer-reviewed</span> journals, 
-			with an <span style="white-space: nowrap;"><b>h-index</b>&nbsp;of&nbsp;<span style="font-weight: bold; font-size: 1.1rem">${hIndex}</span></span>, 
+			with an <span style="white-space: nowrap;"><b>h-index</b>&nbsp;of&nbsp;<span style="font-weight: bold; font-size: 1.1rem">${hIndex}</span></span> 
 			and <span style="white-space: nowrap;"><span style="font-weight: bold; font-size: 1.1rem">${citations}</span>&nbsp;<b>citations</b></span>. 
 	`;
 		//			A total <span style="white-space: nowrap;">of&nbsp;<span style="font-weight: bold; font-size: 1.1rem">${publications}</span>&nbsp;<b>publications</b></span> 
@@ -105,6 +105,7 @@ const day = String(lastModified.getDate()).padStart(2, '0');  // Pad single digi
 	const year = lastModified.getFullYear();
 const formattedDate = `${day}/${month}/${year}`;
 document.getElementById('lastUpdate').textContent = 'Updated on ' + formattedDate;
+
 
 
 
