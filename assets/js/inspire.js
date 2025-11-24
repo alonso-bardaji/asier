@@ -75,17 +75,23 @@ async function fetchInspireHEP() {
 		// Update DOM
 		document.getElementById('inspire-hep-container').innerHTML = output;
 		document.getElementById('laburpena').innerHTML = `
-		A total <span style="white-space: nowrap;">of&nbsp;<span style="font-weight: bold; font-size: 1.1rem">${publications}</span>&nbsp;<b>publications</b></span> 
+		&ldquo;A total <span style="white-space: nowrap;">of&nbsp;<span style="font-weight: bold; font-size: 1.1rem">${publications}</span>&nbsp;<b>publications</b></span> 
      			in <span style="white-space: nowrap;">high-impact</span> <span style="white-space: nowrap;">peer-reviewed</span> journals, 
 			with an <span style="white-space: nowrap;"><b>h-index</b>&nbsp;of&nbsp;<span style="font-weight: bold; font-size: 1.1rem">${hIndex}</span></span> 
-			and <span style="white-space: nowrap;"><span style="font-weight: bold; font-size: 1.1rem">${citations}</span>&nbsp;<b>citations</b></span>. 
+			and <span style="white-space: nowrap;"><span style="font-weight: bold; font-size: 1.1rem">${citations}</span>&nbsp;<b>citations</b></span>.&rdquo;
+			<br><span style="font-size: smaller;text-transform: none;font-weight: normal; position: relative;text-align: right; float: right; letter-spacing: -0.25px;margin-top: 0.5rem;">
+			Updated on&nbsp;<span id="today-date"></span>.&nbsp;
+			Source: <a href="https://inspirehep.net/authors/1828431?ui-citation-summary=true" target="_blank">INSPIRE-HEP</a>.</span>
 	`;
-		//			A total <span style="white-space: nowrap;">of&nbsp;<span style="font-weight: bold; font-size: 1.1rem">${publications}</span>&nbsp;<b>publications</b></span> 
-   //  			in <span style="white-space: nowrap;">high-impact</span> <span style="white-space: nowrap;">peer-reviewed</span> journals, 
-	//		an <span style="white-space: nowrap;"><b>h-index</b>&nbsp;of&nbsp;<span style="font-weight: bold; font-size: 1.1rem">${hIndex}</span></span>, 
-	//		and <span style="white-space: nowrap;"><span style="font-weight: bold; font-size: 1.1rem">${citations}</span>&nbsp;<b>citations</b></span> 
-	//		demonstrate sustained academic impact.
-	//	`;
+		
+document.getElementById("today-date").textContent =
+  new Date().toLocaleDateString('en-GB', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  });
+
+
 
 	} catch (error) {
 		console.error('Error fetching INSPIRE-HEP data:', error);
@@ -95,8 +101,7 @@ async function fetchInspireHEP() {
 
 fetchInspireHEP();
 
-const now = new Date();
-document.getElementById("date").textContent = "Updated on " + now.toLocaleDateString();
+
 
 
 const lastModified = new Date(document.lastModified);
@@ -105,7 +110,6 @@ const day = String(lastModified.getDate()).padStart(2, '0');  // Pad single digi
 	const year = lastModified.getFullYear();
 const formattedDate = `${day}/${month}/${year}`;
 document.getElementById('lastUpdate').textContent = 'Updated on ' + formattedDate;
-
 
 
 
